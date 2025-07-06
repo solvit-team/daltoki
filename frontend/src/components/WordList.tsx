@@ -29,7 +29,9 @@ const WordList: React.FC<WordListProps> = ({
     }
   };
 
-  const displayWords = translationResults;
+  const displayWords = translationResults.filter((result, index, self) =>
+    index === self.findIndex((r) => r.word === result.word)
+  );
 
   return (
     <div className="flex flex-col gap-2.5">

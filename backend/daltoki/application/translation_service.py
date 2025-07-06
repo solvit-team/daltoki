@@ -25,7 +25,7 @@ class TranslationService:
                     word=word_clean,
                     translations={},
                     usage=Usage.UNKNOWN,
-                    sitelen_pona="UNKNOWN",
+                    sitelen_pona="__",
                 )
 
             translations.append(translation)
