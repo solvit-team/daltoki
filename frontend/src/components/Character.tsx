@@ -27,7 +27,7 @@ const Character: React.FC<CharacterProps> = ({
   };
 
   const handleDownload = () => {
-    toast("다운로드 기능이 실행되었습니다");
+    toast("sitelen pona 이미지를 저장합니다.");
     onDownload?.();
   };
 
