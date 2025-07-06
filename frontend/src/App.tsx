@@ -3,7 +3,6 @@ import TranslationArea from "./components/TranslationArea";
 import WordList from "./components/WordList";
 import Header from "./components/Header";
 import Character from "./components/Character";
-import type { Word } from "./types/word";
 import { Toaster } from "sonner";
 import { useState } from "react";
 
@@ -20,13 +19,6 @@ function App() {
   const [translationResults, setTranslationResults] = useState<
     TranslationResult[]
   >([]);
-
-  const words: Word[] = [
-    { word: "toki", meaning: "말", usage: "core" },
-    { word: "pona", meaning: "언어", usage: "common" },
-    { word: "li", meaning: "구분자", usage: "obscure" },
-    { word: "sona", meaning: "좋다", usage: "core" },
-  ];
 
   const handleInputChange = (text: string) => {
     console.log("Input changed:", text);
@@ -61,7 +53,6 @@ function App() {
             onTranslationUpdate={handleTranslationUpdate}
           />
           <WordList
-            words={words}
             translationResults={translationResults}
             selectedLanguage={selectedLanguage}
           />
