@@ -1,0 +1,135 @@
+words:
+  - word: "mi"
+    translations:
+      korean: "나"
+      english: "I"
+      chinese: "我"
+      japanese: "私"
+    usage: "core"
+    sitelen_pona: "MI"
+    
+  - word: "sina"
+    translations:
+      korean: "너"
+      english: "you"
+      chinese: "你"
+      japanese: "あなた"
+    usage: "core"
+    sitelen_pona: "SINA"
+    
+  - word: "ona"
+    translations:
+      korean: "그/그녀"
+      english: "he/she/it"
+      chinese: "他/她/它"
+      japanese: "彼/彼女"
+    usage: "core"
+    sitelen_pona: "ONA"
+    
+  - word: "toki"
+    translations:
+      korean: "시간"
+      english: "time"
+      chinese: "时间"
+      japanese: "時間"
+    usage: "core"
+    sitelen_pona: "TOKI"
+    
+  - word: "pona"
+    translations:
+      korean: "좋은"
+      english: "good"
+      chinese: "好"
+      japanese: "良い"
+    usage: "core"
+    sitelen_pona: "PONA"
+    
+  - word: "ike"
+    translations:
+      korean: "나쁜"
+      english: "bad"
+      chinese: "坏"
+      japanese: "悪い"
+    usage: "common"
+    sitelen_pona: "IKE"
+    
+  - word: "moku"
+    translations:
+      korean: "먹다"
+      english: "eat"
+      chinese: "吃"
+      japanese: "食べる"
+    usage: "core"
+    sitelen_pona: "MOKU"
+    
+  - word: "telo"
+    translations:
+      korean: "물"
+      english: "water"
+      chinese: "水"
+      japanese: "水"
+    usage: "core"
+    sitelen_pona: "TELO"
+    
+  - word: "mama"
+    translations:
+      korean: "부모"
+      english: "parent"
+      chinese: "父母"
+      japanese: "親"
+    usage: "common"
+    sitelen_pona: "MAMA"
+    
+  - word: "jan"
+    translations:
+      korean: "사람"
+      english: "person"
+      chinese: "人"
+      japanese: "人"
+    usage: "core"
+    sitelen_pona: "JAN"
+    
+  - word: "suno"
+    translations:
+      korean: "듣다"
+      english: "hear"
+      chinese: "听"
+      japanese: "聞く"
+    usage: "common"
+    sitelen_pona: "SUNO"
+    
+  - word: "kala"
+    translations:
+      korean: "물고기"
+      english: "fish"
+      chinese: "鱼"
+      japanese: "魚"
+    usage: "common"
+    sitelen_pona: "KALA"
+    
+  - word: "waso"
+    translations:
+      korean: "새"
+      english: "bird"
+      chinese: "鸟"
+      japanese: "鳥"
+    usage: "common"
+    sitelen_pona: "WASO"
+    
+  - word: "soweli"
+    translations:
+      korean: "동물"
+      english: "animal"
+      chinese: "动物"
+      japanese: "動物"
+    usage: "common"
+    sitelen_pona: "SOWELI"
+    
+  - word: "kiwen"
+    translations:
+      korean: "돌"
+      english: "stone"
+      chinese: "石头"
+      japanese: "石"
+    usage: "obscure"
+    sitelen_pona: "KIWEN"

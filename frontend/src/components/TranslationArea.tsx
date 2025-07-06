@@ -1,25 +1,82 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ClipboardCopy } from "lucide-react";
 import { toast } from "sonner";
+
+interface TranslationResult {
+  word: string;
+  part_of_speech: string;
+  usage: string;
+  sitelen_pona: string;
+  multilingual_translations: Record<string, string>;
+}
 
 interface TranslationAreaProps {
   onInputChange?: (text: string) => void;
   onCopy?: () => void;
   placeholder?: string;
+  selectedLanguage?: string;
+  onTranslationUpdate?: (results: TranslationResult[]) => void;
 }
 
 const TranslationArea: React.FC<TranslationAreaProps> = ({
   onInputChange,
   onCopy,
   placeholder = "Type the Sitelen Lasina",
+  selectedLanguage = "korean",
+  onTranslationUpdate,
 }) => {
   const [inputText, setInputText] = useState("");
+  const [translationResults, setTranslationResults] = useState<
+    TranslationResult[]
+  >([]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const fetchTranslation = async (text: string) => {
+    if (!text.trim()) {
+      setTranslationResults([]);
+      onTranslationUpdate?.([]);
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "http://localhost:8000/translations/translate",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            text: text,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        setTranslationResults(data.translations);
+        onTranslationUpdate?.(data.translations);
+      }
+    } catch (error) {
+      console.error("Translation error:", error);
+      toast("번역 중 오류가 발생했습니다");
+    }
+  };
+
+  const handleInputChange = async (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const value = e.target.value;
     setInputText(value);
     onInputChange?.(value);
+
+    await fetchTranslation(value);
   };
+
+  useEffect(() => {
+    if (inputText.trim()) {
+      fetchTranslation(inputText);
+    }
+  }, [selectedLanguage]);
 
   const handleCopy = () => {
     if (inputText) {
