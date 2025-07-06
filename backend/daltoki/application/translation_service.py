@@ -15,6 +15,8 @@ class TranslationService:
 
         for word in words:
             word_clean = word.strip()
+            if not word_clean:
+                continue
 
             # Keep only lowercase English letters
             word_clean = re.sub(r"[^a-z]", "", word_clean.lower())

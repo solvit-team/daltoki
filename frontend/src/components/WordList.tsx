@@ -14,7 +14,7 @@ interface WordListProps {
 
 const WordList: React.FC<WordListProps> = ({
   translationResults = [],
-  selectedLanguage = "korean",
+  selectedLanguage = "ko",
 }) => {
   const getUsageColor = (usage: string) => {
     switch (usage) {
@@ -46,7 +46,7 @@ const WordList: React.FC<WordListProps> = ({
             </span>
             <span className="text-black font-normal text-sm">
               {item.multilingual_translations[selectedLanguage] ||
-                item.multilingual_translations["korean"] ||
+                item.multilingual_translations["ko"] ||
                 "No translation"}
             </span>
           </div>

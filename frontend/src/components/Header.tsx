@@ -17,7 +17,7 @@ interface HeaderProps {
   onLanguageChange?: (language: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ language = "korean", onLanguageChange }) => {
+const Header: React.FC<HeaderProps> = ({ language = "ko", onLanguageChange }) => {
   const handleLanguageSelect = (selectedLang: string) => {
     onLanguageChange?.(selectedLang);
   };

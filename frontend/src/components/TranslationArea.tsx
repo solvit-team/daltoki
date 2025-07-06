@@ -22,7 +22,7 @@ const TranslationArea: React.FC<TranslationAreaProps> = ({
   onInputChange,
   onCopy,
   placeholder = "Type the Sitelen Lasina",
-  selectedLanguage = "korean",
+  selectedLanguage = "ko",
   onTranslationUpdate,
 }) => {
   const [inputText, setInputText] = useState("");

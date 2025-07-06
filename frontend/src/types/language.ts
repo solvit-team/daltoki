@@ -5,10 +5,11 @@ export interface Language {
 }
 
 export const LANGUAGES: Language[] = [
-  { code: "korean", name: "Korean", nativeName: "한국어" },
-  { code: "english", name: "English", nativeName: "English" },
-  { code: "chinese", name: "Chinese", nativeName: "中文" },
-  { code: "japanese", name: "Japanese", nativeName: "日本語" },
+  { code: "en", name: "English", nativeName: "English" },
+  { code: "fr", name: "French", nativeName: "Français" },
+  { code: "de", name: "German", nativeName: "Deutsch" },
+  { code: "eo", name: "Esperanto", nativeName: "Esperanto" },
+  { code: "ko", name: "Korean", nativeName: "한국어" },
 ];
 
 export const getLanguageByCode = (code: string): Language | undefined => {

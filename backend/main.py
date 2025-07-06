@@ -1,9 +1,22 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from daltoki.infra.translation_repo import TranslationRepository
 from daltoki.interface.translation_controller import router as translation_router
 
-app = FastAPI(title="Daltoki Translation API")
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup
+    app.state.translation_repo = TranslationRepository()
+    yield
+    # Shutdown
+    pass
+
+
+app = FastAPI(title="Daltoki Translation API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,

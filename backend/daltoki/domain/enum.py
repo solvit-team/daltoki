@@ -2,10 +2,11 @@ from enum import Enum
 
 
 class Language(str, Enum):
-    KOREAN = "korean"
-    ENGLISH = "english"
-    CHINESE = "chinese"
-    JAPANESE = "japanese"
+    ENGLISH = "en"
+    FRENCH = "fr"
+    GERMAN = "de"
+    ESPERANTO = "eo"
+    KOREAN = "ko"
 
 
 class Usage(str, Enum):

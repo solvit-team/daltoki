@@ -1,12 +1,11 @@
 from typing import Dict, List, Optional
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Request
 from pydantic import BaseModel
 from typing_extensions import Annotated
 
 from daltoki.application.translation_service import TranslationService
 from daltoki.domain.enum import Language, Usage
-from daltoki.infra.translation_repo import TranslationRepository
 
 
 class TranslationRequest(BaseModel):
@@ -26,8 +25,8 @@ class TranslationResponse(BaseModel):
     translations: List[WordTranslationResponse]
 
 
-def get_translation_service() -> TranslationService:
-    translation_repo = TranslationRepository()
+def get_translation_service(request: Request) -> TranslationService:
+    translation_repo = request.app.state.translation_repo
     return TranslationService(translation_repo)
 
 

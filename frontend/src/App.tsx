@@ -15,7 +15,7 @@ interface TranslationResult {
 }
 
 function App() {
-  const [selectedLanguage, setSelectedLanguage] = useState<string>("korean");
+  const [selectedLanguage, setSelectedLanguage] = useState<string>("ko");
   const [translationResults, setTranslationResults] = useState<
     TranslationResult[]
   >([]);
