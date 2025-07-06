@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { ClipboardCopy } from 'lucide-react';
+import React, { useState } from "react";
+import { ClipboardCopy } from "lucide-react";
+import { toast } from "sonner";
 
 interface TranslationAreaProps {
   onInputChange?: (text: string) => void;
@@ -10,9 +11,9 @@ interface TranslationAreaProps {
 const TranslationArea: React.FC<TranslationAreaProps> = ({
   onInputChange,
   onCopy,
-  placeholder = "Type the Sitelen Lasina"
+  placeholder = "Type the Sitelen Lasina",
 }) => {
-  const [inputText, setInputText] = useState('');
+  const [inputText, setInputText] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
@@ -23,6 +24,7 @@ const TranslationArea: React.FC<TranslationAreaProps> = ({
   const handleCopy = () => {
     if (inputText) {
       navigator.clipboard.writeText(inputText);
+      toast("텍스트가 클립보드에 복사되었습니다");
       onCopy?.();
     }
   };
@@ -39,7 +41,10 @@ const TranslationArea: React.FC<TranslationAreaProps> = ({
           />
           {inputText && (
             <div className="flex justify-end items-center">
-              <button onClick={handleCopy} className="w-4 h-4 flex items-center justify-center">
+              <button
+                onClick={handleCopy}
+                className="w-4 h-4 flex items-center justify-center"
+              >
                 <ClipboardCopy size={16} strokeWidth={1.5} color="black" />
               </button>
             </div>
